@@ -1,16 +1,16 @@
-package co.com.example.Castro.usuario;
+package co.com.Castro.gateway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
+
 @EnableDiscoveryClient
 @SpringBootApplication
-public class UsuarioApplication
-{
+public class Main {
 
     public static void main(String[] args) {
-        SpringApplication.run(UsuarioApplication.class, args);
+
     }
 
 }

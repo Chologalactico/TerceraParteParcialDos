@@ -4,10 +4,13 @@ package co.com.example.Castro.usuario.controller;
 import co.com.example.Castro.usuario.models.entity.Alumno;
 import co.com.example.Castro.usuario.service.AlumnoService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -15,6 +18,18 @@ public class AlumnoController {
 
     @Autowired
     AlumnoService service;
+    
+    @Value("${config.balanceador.test}")
+    private String balanceadorTest;
+
+    @GetMapping("/balanceador-test")
+    public ResponseEntity<?> balanceadorTest() {
+        Map<String,Object> response = new HashMap<String,Object>();
+        response.put("balanceador", balanceadorTest);
+        response.put("alumnos", service.findAll());
+
+        return ResponseEntity.ok().body(response);
+    }
 
     @GetMapping
     public ResponseEntity<?> listarAlumno() {
