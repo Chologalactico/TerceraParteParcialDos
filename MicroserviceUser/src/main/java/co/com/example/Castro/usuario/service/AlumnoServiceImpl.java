@@ -7,6 +7,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import java.util.Optional;
+
+
+/*
+ * decorador Transaction.
+	Es un decorador diseñado gestionar la trasaccionalidad de los metodos
+	Indica que un metodo o una clase debe ejcutarse dentro de una transaccion de la BD,
+	lo que garantiza que sean las operacion dentro de esta misma 
+ */
 @Service
 public class AlumnoServiceImpl implements AlumnoService{
     @Autowired

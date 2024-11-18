@@ -1,0 +1,13 @@
+Parte uno Definiciones
+Que es el servidor de EUREKA:
+Es un componente que se utiliza como un servidor de descubrimiento de servicios en arquitecturas de microservicio,
+es una solución que a gestionar y orquestar microservicios 
+
+Parte dos definiciones
+Que son los genéricos en java , sus ventajas y usos.
+Son las características que permiten a las clases ,interfaces y métodos operar con tipos de datos específicos 
+Ventajas:
+1.Seguridad de tipos en tiempos de compilación2.
+2.Eliminacion de casting explicito
+3.Mejora la legibilidad y mantenimiento código
+4.Reutilizacion de código 
