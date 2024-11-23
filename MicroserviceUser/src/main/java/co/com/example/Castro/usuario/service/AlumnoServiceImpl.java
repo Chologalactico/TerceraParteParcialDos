@@ -30,10 +30,12 @@ public class AlumnoServiceImpl implements AlumnoService{
         return dao.findById(id);
     }
     @Override
+    @Transactional
     public Alumno save(Alumno alumno) {
         return (Alumno) dao.save(alumno);
     }
     @Override
+    @Transactional
     public void deleteById(Long id) {
         dao.deleteById(id);
     }

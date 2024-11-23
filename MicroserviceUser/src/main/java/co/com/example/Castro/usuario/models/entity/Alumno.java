@@ -30,15 +30,15 @@ public class Alumno {
     private String apellido;
     private String email;
 
- // Indica que un campo de la clase está mapeado a una columna específica en la tabla de la base de datos.
+ // @Column(name = "create_at")Indica que un campo de la clase está mapeado a una columna específica en la tabla de la base de datos.
+
+ // @Temporal(TemporalType.TIMESTAMP)Especifica el tipo de dato temporal (fecha/hora) que se va a mapear en la base de datos.
     @Column(name = "create_at")
- // Especifica el tipo de dato temporal (fecha/hora) que se va a mapear en la base de datos.
     @Temporal(TemporalType.TIMESTAMP)
     private Date createAt;
 
- // Especifica el tipo de dato temporal (fecha/hora) que se va a mapear en la base de datos.
     @PrePersist
-    private void prePersist() {
+    private void prePersiste() {
         this.createAt = new Date();
     }
 

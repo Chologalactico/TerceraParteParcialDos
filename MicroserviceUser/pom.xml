@@ -5,13 +5,13 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.1.4</version>
+        <version>3.3.5</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.example</groupId>
-    <artifactId>MicroservicioUsuarios</artifactId>
+    <groupId>com.co.Diaz</groupId>
+    <artifactId>MicroserviciosUsuarios</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>Usuarios</name>
+    <name>MicroserviciosUsuarios</name>
     <description>Demo project for Spring Boot</description>
     <url/>
     <licenses>
@@ -42,77 +42,49 @@
         </dependencies>
     </dependencyManagement>
     <dependencies>
-    <!-- Dependencia de Spring Boot que incluye las funcionalidades de Spring Data JPA.
-         Permite interactuar de forma fácil con bases de datos relacionales mediante JPA,
-         ofreciendo soporte para crear repositorios y realizar consultas de datos. -->
-    <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-data-jpa</artifactId>
-    </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
 
-    <!-- Dependencia de Spring Boot para construir aplicaciones web.
-         Incluye soporte para crear aplicaciones RESTful y trabajar con controladores,
-         JSON, validación y más características necesarias para desarrollar servicios web. -->
-    <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-web</artifactId>
-    </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <scope>runtime</scope>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.32</version> <!-- or any other compatible version -->
+        </dependency>
 
-    <!-- Dependencia que permite el uso de Spring Boot DevTools, que mejora la experiencia de desarrollo.
-         Ofrece recarga automática de la aplicación al detectar cambios en el código, entre otras herramientas.
-         El `scope` en runtime significa que se incluye en el entorno de desarrollo, no en producción. -->
-    <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-devtools</artifactId>
-        <scope>runtime</scope>
-        <optional>true</optional>
-    </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
 
-    <!-- Conector de MySQL que permite la conexión entre la aplicación Java y la base de datos MySQL.
-         Es esencial para cualquier aplicación que necesite realizar operaciones de base de datos con MySQL.
-         La versión se puede ajustar según las necesidades de compatibilidad. -->
-    <dependency>
-        <groupId>mysql</groupId>
-        <artifactId>mysql-connector-java</artifactId>
-        <version>8.0.32</version> <!-- or any other compatible version -->
-    </dependency>
+        <dependency>
+            <groupId>org.glassfish.jaxb </groupId>
+            <artifactId>jaxb-runtime</artifactId>
+        </dependency>
 
-    <!-- Dependencia de Spring Boot para realizar pruebas. Incluye herramientas como JUnit,
-         Mockito y otros frameworks de testing para facilitar la escritura de pruebas unitarias e
-         integrales de la aplicación. `scope` en test significa que solo se carga al realizar pruebas. -->
-    <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-test</artifactId>
-        <scope>test</scope>
-    </dependency>
 
-    <!-- Biblioteca Lombok que permite reducir el código boilerplate al generar automáticamente
-         métodos como `getters`, `setters`, `toString`, etc., a través de anotaciones. Se marca como
-         opcional porque no es necesaria en tiempo de ejecución, solo en tiempo de compilación. -->
-    <dependency>
-        <groupId>org.projectlombok</groupId>
-        <artifactId>lombok</artifactId>
-        <optional>true</optional>
-    </dependency>
-
-    <!-- Dependencia de Spring Cloud que habilita la funcionalidad del cliente Eureka.
-         Permite que la aplicación se registre y descubra servicios en un servidor Eureka,
-         facilitando la comunicación entre microservicios en una arquitectura distribuida. -->
-    <dependency>
-        <groupId>org.springframework.cloud</groupId>
-        <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-    </dependency>
-
-    <!-- Dependencia de JAXB (Java Architecture for XML Binding) que permite trabajar con XML
-         en Java, ya que en versiones más recientes de Java (Java 9 en adelante) JAXB fue eliminado
-         del JDK. Esta dependencia es necesaria para aplicaciones que necesiten trabajar con 
-         procesamiento de XML. -->
-    <dependency>
-        <groupId>org.glassfish.jaxb</groupId>
-        <artifactId>jaxb-runtime</artifactId>
-    </dependency>
-</dependencies>
-
+    </dependencies>
 
     <build>
         <plugins>
