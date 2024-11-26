@@ -22,7 +22,7 @@ public class CommonController<E,S extends CommonService<E>> {
     protected S service;
     
     @Value("${config.balanceador.test}")
-    private String balanceadorTest;
+    protected String balanceadorTest;
 
     @GetMapping("/balanceador-test")
     public ResponseEntity<?> balanceadorTest() {
@@ -33,13 +33,13 @@ public class CommonController<E,S extends CommonService<E>> {
         return ResponseEntity.ok().body(response);
     }
 
-    @GetMapping
+    @GetMapping("/listar")
     public ResponseEntity<?> listarAlumno() {
         return ResponseEntity.ok().body(service.findAll());
     }
 
     @GetMapping("/")
-    public ResponseEntity<?> ver(@PathVariable Long id) {
+    protected ResponseEntity<?> ver(@PathVariable Long id) {
         Optional <E> ob = service.findById(id);
         if (ob.isEmpty()) {
             return ResponseEntity.noContent().build();
@@ -48,13 +48,13 @@ public class CommonController<E,S extends CommonService<E>> {
     }
 
     @PostMapping("/alumnosCrear")
-    public ResponseEntity<?> crear(@RequestBody E entity) {
+    protected ResponseEntity<?> crear(@RequestBody E entity) {
         E alumnoDb = service.save(entity);
         return ResponseEntity.status(HttpStatus.CREATED).body(alumnoDb);
     }
     
     @DeleteMapping("/{id}")
-    private ResponseEntity<?> eliminar(@PathVariable Long id) {
+    protected ResponseEntity<?> eliminar(@PathVariable Long id) {
         service.deleteById(id);
         return ResponseEntity.noContent().build();
     }
